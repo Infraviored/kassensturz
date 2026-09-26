@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="16 12 104 108">
+  <!-- receipt with zigzag tear -->
+  <path d="M20 14h74v96l-9.25 6l-9.25-6l-9.25 6l-9.25-6l-9.25 6l-9.25-6l-9.25 6l-9.25-6z" fill="#000" opacity=".25" transform="translate(3 3)"/>
+  <path d="M20 14h74v96l-9.25 6l-9.25-6l-9.25 6l-9.25-6l-9.25 6l-9.25-6l-9.25 6l-9.25-6z" fill="#fff"/>
+  <circle cx="57" cy="43" r="22" fill="#fff000" stroke="#e60a14" stroke-width="3.5"/><text x="57" y="55" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="bold" font-size="34" fill="#0050aa">€</text>
+  <g stroke="#9aa3ad" stroke-width="4" stroke-linecap="round">
+    <path d="M30 80h32M72 80h12M30 90h24M72 90h12M30 100h28M72 100h12"/>
+  </g>
+  <!-- download badge -->
+  <!-- bottom-right corner concentric with background corner (center 106,106) -->
+  <path d="M91 87H114a4 4 0 0 1 4 4V106A12 12 0 0 1 106 118H91a4 4 0 0 1-4-4V91a4 4 0 0 1 4-4z" fill="#fff000" stroke="#e60a14" stroke-width="2.5"/>
+  <g fill="#0050aa"><path d="M100.5 92h4v9h5l-7 7.5-7-7.5h5z"/><rect x="94.5" y="110" width="16" height="3"/></g>
+</svg>
