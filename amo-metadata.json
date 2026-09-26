@@ -1,0 +1,13 @@
+{
+  "categories": { "firefox": ["shopping"] },
+  "summary": {
+    "en-US": "Export all your Lidl Plus receipts at once as PDF, JSON and CSV, with date range filter, straight into a Downloads folder. Unofficial, not affiliated with Lidl.",
+    "de": "Exportiert alle Lidl Plus Kassenbons auf einmal als PDF, JSON und CSV – mit Zeitraum-Filter, direkt in einen Download-Ordner. Inoffiziell, nicht mit Lidl verbunden."
+  },
+  "description": {
+    "en-US": "Kassensturz adds a small button to lidl.de. Log in, open it, pick a date range and press Start.\n\n- One PDF per receipt, looking like the receipt copy on lidl.de (selectable text, barcode)\n- One JSON per receipt: items, quantity, unit price, discounts, VAT, payment method, coupons\n- A CSV with every item of every receipt (semicolon separated, for Excel/LibreOffice)\n- Loads several receipts in parallel and saves each one immediately into Downloads/lidl-bons-DATE/{pdf,json}/\n\nNo data is collected or sent anywhere. Everything runs locally in your browser using your existing Lidl login.\n\nSource: https://github.com/Infraviored/kassensturz",
+    "de": "Kassensturz fügt auf lidl.de einen kleinen Button hinzu. Einloggen, öffnen, Zeitraum wählen, Start.\n\n- Eine PDF pro Bon, wie die Bonkopie auf lidl.de (Text auswählbar, mit Barcode)\n- Eine JSON pro Bon: Artikel, Menge, Einzelpreis, Rabatte, MwSt, Zahlungsart, Coupons\n- Eine CSV mit allen Artikeln aller Bons (;-getrennt, für Excel/LibreOffice)\n- Lädt mehrere Bons parallel und speichert jeden sofort in Downloads/lidl-bons-DATUM/{pdf,json}/\n\nEs werden keine Daten gesammelt oder gesendet. Alles läuft lokal im Browser mit deinem bestehenden Lidl-Login.\n\nQuellcode: https://github.com/Infraviored/kassensturz"
+  },
+  "homepage": { "en-US": "https://github.com/Infraviored/kassensturz" },
+  "version": { "license": "MIT" }
+}
