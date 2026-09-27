@@ -1,4 +1,6 @@
+// web-ext works on the built Firefox extension: run `npm run build:firefox` first.
 module.exports = {
-  ignoreFiles: ['preview.html', 'preview-ui.html', 'lidl-logo.svg', 'README.md', 'LICENSE', 'amo-metadata.json', 'web-ext-config.cjs', 'dist'],
+  sourceDir: './build/firefox',
+  artifactsDir: './web-ext-artifacts',
   build: { overwriteDest: true },
 };

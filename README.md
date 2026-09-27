@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon.svg" width="140" alt="Kassensturz Logo">
+  <img src="src/icon.svg" width="140" alt="Kassensturz Logo">
 </p>
 
 <h1 align="center">Kassensturz</h1>
@@ -11,6 +11,7 @@
 
 <p align="center">
   <a href="https://addons.mozilla.org/de/firefox/addon/kassensturz-kassenbon-export-f/"><img src="https://img.shields.io/badge/Firefox-Add--on-FF7139?logo=firefoxbrowser&logoColor=white" alt="Firefox Add-on"></a>
+  <img src="https://img.shields.io/badge/Chrome-entpackt%20ladbar-4285F4?logo=googlechrome&logoColor=white" alt="Chrome">
   <img src="https://img.shields.io/badge/Lizenz-MIT-0050aa" alt="MIT">
   <img src="https://img.shields.io/badge/Daten-bleiben%20lokal-2a9d4a" alt="Daten bleiben lokal">
 </p>
@@ -68,14 +69,28 @@ Mit **Ordner öffnen** springst du direkt zu den Dateien.
 
 ## 🛠️ Entwicklung
 
-Temporär laden: `about:debugging` → *Dieser Firefox* → *Temporäres Add-on laden* → `manifest.json`.
+Ein Quellcode, zwei Browser:
 
-```bash
-npx web-ext lint
-npx web-ext build -a dist
+```
+src/                   Code, Icons, jsPDF (gemeinsam für alle Browser)
+manifests/base.json    gemeinsame Manifest-Einträge
+manifests/firefox.json Firefox-Teil (background.scripts, Gecko-ID)
+manifests/chrome.json  Chrome-Teil (background.service_worker)
+scripts/build.mjs      baut build/<browser>/ und dist/*.zip
+dev/                   Vorschau-Seiten, Quell-Logo
 ```
 
-`preview-ui.html` zeigt das Widget ohne Extension-Umgebung (Datei einfach im Browser öffnen).
+```bash
+npm run build          # Firefox + Chrome
+npm run lint:firefox   # web-ext lint auf build/firefox
+npm run check:chrome   # lädt build/chrome in headless Chromium
+```
+
+Temporär laden:
+- **Firefox:** `about:debugging` → *Dieser Firefox* → *Temporäres Add-on laden* → `build/firefox/manifest.json`
+- **Chrome:** `chrome://extensions` → Entwicklermodus → *Entpackte Erweiterung laden* → `build/chrome/`
+
+`dev/preview-ui.html` zeigt das Widget ohne Extension-Umgebung (Datei im Browser öffnen).
 
 Drittanbieter: [jsPDF](https://github.com/parallax/jsPDF) 2.5.1 (MIT), unverändert.
 

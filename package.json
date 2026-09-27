@@ -1,0 +1,12 @@
+{
+  "name": "kassensturz",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:firefox": "node scripts/build.mjs firefox",
+    "build:chrome": "node scripts/build.mjs chrome",
+    "lint:firefox": "npm run build:firefox && npx -y web-ext lint -s build/firefox",
+    "check:chrome": "npm run build:chrome && node scripts/check-chrome.mjs"
+  }
+}

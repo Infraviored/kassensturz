@@ -1,6 +1,6 @@
 <!doctype html><meta charset="utf-8"><title>Widget Preview</title>
 <body style="margin:0;background:#f2f2f2;font:16px system-ui;height:100vh">
 <p style="padding:30px">Widget-Vorschau: unten rechts auf das Icon klicken.</p>
-<script>window.chrome = { runtime: { getURL: p => p, sendMessage: (m, cb) => cb && cb(null) } };</script>
-<script src="content.js"></script>
+<script>window.chrome = { runtime: { getURL: p => "../src/" + p, sendMessage: (m, cb) => cb && cb(null) } };</script>
+<script src="../src/content.js"></script>
 <script>if (location.hash === "#open") document.getElementById("lx-fab").click();</script>
