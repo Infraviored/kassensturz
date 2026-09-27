@@ -3,3 +3,5 @@ dist/
 web-ext-artifacts/
 node_modules/
 .amo-upload-uuid
+.wt/
+.wt/

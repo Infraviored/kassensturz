@@ -2,6 +2,7 @@
 // Builds the extension for each browser from one shared source tree.
 //
 //   src/                    shared code, icons, libraries
+//   src-<target>/           optional files only for that browser (copied over src/)
 //   manifests/base.json     manifest keys common to all browsers
 //   manifests/<target>.json per-browser overlay (deep-merged over base;
 //                           objects merge, arrays replace, null deletes a key)
@@ -50,6 +51,7 @@ for (const target of targets) {
   const out = join(root, 'build', target);
   rmSync(out, { recursive: true, force: true });
   cpSync(join(root, 'src'), out, { recursive: true });
+  if (existsSync(join(root, 'src-' + target))) cpSync(join(root, 'src-' + target), out, { recursive: true });
   writeFileSync(join(out, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 
   const missing = referencedFiles(manifest).filter(f => !existsSync(join(out, f)));
@@ -58,6 +60,11 @@ for (const target of targets) {
   mkdirSync(join(root, 'dist'), { recursive: true });
   const zip = join(root, 'dist', `${name}-${target}-${manifest.version}.zip`);
   rmSync(zip, { force: true });
-  execFileSync('zip', ['-qr', '-X', zip, '.', '-x', '.*'], { cwd: out });
+  try {
+    execFileSync('zip', ['-qr', '-X', zip, '.', '-x', '.*'], { cwd: out });
+  } catch (e) {
+    if (e.code === 'ENOENT') throw new Error('the `zip` command is missing; install it (e.g. apt install zip). build/' + target + '/ is complete.');
+    throw e;
+  }
   console.log(`${target}: build/${target}/  dist/${name}-${target}-${manifest.version}.zip`);
 }

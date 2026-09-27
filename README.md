@@ -73,9 +73,10 @@ Ein Quellcode, zwei Browser:
 
 ```
 src/                   Code, Icons, jsPDF (gemeinsam für alle Browser)
+src-chrome/            nur Chrome: Service-Worker-Einstieg, Offscreen-Dokument für große Downloads
 manifests/base.json    gemeinsame Manifest-Einträge
 manifests/firefox.json Firefox-Teil (background.scripts, Gecko-ID)
-manifests/chrome.json  Chrome-Teil (background.service_worker)
+manifests/chrome.json  Chrome-Teil (background.service_worker, offscreen)
 scripts/build.mjs      baut build/<browser>/ und dist/*.zip
 dev/                   Vorschau-Seiten, Quell-Logo
 ```
