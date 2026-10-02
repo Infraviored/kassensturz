@@ -3,7 +3,7 @@
   "name": "Kassensturz – Kassenbon-Export für Lidl Plus",
   "short_name": "Kassensturz",
   "version": "1.0.0",
-  "description": "Exportiert deine Lidl Plus Kassenbons gesammelt als PDF, JSON und CSV – mit Zeitraum-Filter, direkt in einen Download-Ordner. Inoffiziell, nicht mit Lidl verbunden.",
+  "description": "Exportiert Lidl Plus Kassenbons gesammelt als PDF, JSON und CSV, mit Zeitraum-Filter. Inoffiziell, nicht mit Lidl verbunden.",
   "author": "Florian Schneider",
   "icons": {
     "16": "icon16.png",
