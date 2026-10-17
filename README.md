@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="src/icon.svg" width="140" alt="Kassensturz Logo">
-</p>
+<img src="src/icon.svg" alt="" width="64" height="64">
 
 <h1 align="center">Kassensturz</h1>
 
